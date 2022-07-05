@@ -1,0 +1,29 @@
+{% extends 'Base.html' %}
+
+{% block body %}
+<form action='/submit' method='post'>
+<div class="mb-3">
+    <label for="reportid" class="form-label">REPORT_ID</label>
+    <input type="number" class="form-control" id="reportid" name="reportid" placeholder="ENTER REPORT_ID">
+</div>
+<div class="mb-3">
+    <label for="casetype" class="form-label">CASE_TYPE</label>
+    <input type="text" class="form-control" id="casetype" name="casetype" placeholder="ENTER CASE_TYPE">
+</div>
+<div class="mb-3">
+    <label for="loc" class="form-label">LOCATION</label>
+    <input type="text" class="form-control" id="loc" name ="loc" placeholder="ENTER LOCATION">
+</div>
+<div class="mb-3">
+    <label for="pin" class="form-label">PIN_CODE</label>
+    <input type="number" class="form-control" id="pin" name="pin" placeholder="ENTER PIN_CODE">
+</div>
+<div class="mb-3">
+    <label for="details" class="form-label">DETAILS</label>
+    <textarea class="form-control" id="details" name="details" rows="3"></textarea>
+</div>
+<input class="btn btn-success" type="submit" value="Submit">
+{% csrf_token %}
+</form>
+
+{% endblock %}
