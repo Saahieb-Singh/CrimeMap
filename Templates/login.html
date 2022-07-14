@@ -1,0 +1,58 @@
+{% extends 'Base.html' %}
+{% load static %}
+{% block title %}
+Report
+{% endblock %}
+{% block css %}
+<link rel='stylesheet' href='{% static '/login.css' %}'>
+{% endblock %}
+{% block nav %}
+<li><a href="/logout">LOGOUT</a></li>
+{% endblock %}
+
+  {% block body %}
+  {{ html|safe }}
+  <div class="container">
+      <div class="case-form" >
+          <form id="register" action='submit' method='post'>
+              <div class="div-form">
+            <label for="fir_id" >Fir_ID</label>
+            <input type="number" id="fir_id" name="fir_id" placeholder="ENTER FIR ID">
+        </div>
+        
+           <div class="div-form">
+               <label for="pol_st_ID">Police_Station_ID</label>
+               <input type="number" id="pol_st_ID" name="pol_st_ID" placeholder="ENTER POLICE STATION ID">
+           </div>
+           
+           <div class="div-form">
+               <label for="loc">Location</label>
+               <input type="text" id="loc" name="loc" placeholder="ENTER LOCATION">
+           </div>
+           
+           <div class="div-form">
+               <label for="date_tym">Date And Time</label>
+               <input type="datetime-local" id="date_tym" name="date_tym">
+            </div>
+            <div class="div-form">
+                <label for="case_detail">Case Detail</label>
+                <textarea type="text" id="case_detail" name="case_detail" row=4 column=10></textarea>
+            </div>
+            <div class="div-form">
+                <label for="dhara">Dhara</label>
+                <select name="dhara" id="dhara">
+                    <option value="dhara1">dhara1</option>
+                    <option value="dhara2">dhara2</option>
+                    <option value="dhara3">dhara3</option>
+                    <option value="dhara4">dhara4</option>
+                </select>
+            </div>
+            {% csrf_token %}
+            <div class="button">
+                <input type="submit" class="btn submit">
+            </div>
+        </form>
+    </div>
+</div>
+    
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block nav %}
+<li><a href="#" data-bs-toggle="modal" data-bs-target="#login">LOGIN</a></li>
+<li><a href="#" data-bs-toggle="modal" data-bs-target="#signup">SIGNUP</a></li>
+{% endblock %}
+
+{%block body%}
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src='{% static 'images/crime_mapping_image.png' %}' class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+
+<!-- SIGN UP FORM -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="signup"
+    data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signup" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signupTitle">SIGNUP</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- form -->
+          <form action="/signup" method="post">
+              <div class="mb-3">
+                  <label for="unicode" class="form-label">UNIQUE CODE</label>
+              <input type="text" class="form-control" id="unicode" name="unicode" placeholder="YOUR UNIQUE CODE" required>
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="ADD YOUR EMAIL ID" required>
+              <label for="fname" class="form-label">FIRST NAME</label>
+              <input type="text" class="form-control" id="fname" name="fname" placeholder="YOUR FIRST NAME" required>
+              <label for="lname" class="form-label">LAST NAME</label>
+              <input type="text" class="form-control" id="lname" name="lname" placeholder="YOUR LAST NAME" required>
+              <label for="pass1" class="form-label">CREATE PASSWORD</label>
+              <input type="password" class="form-control" id="pass1" name="pass1" placeholder="CREATE YOUR PASSWORD" required>
+              <label for="pass2" class="form-label">CONFIRM PASSWORD</label>
+              <input type="password" class="form-control" id="pass2" name="pass2" placeholder="ENTER YOUR PASSWORD AGAIN" required>
+              <button type="submit" class="btn btn-secondary my-2" data-bs-dismiss="modal">Submit</button>
+              {% csrf_token %}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- LOGIN FORM -->
+
+<!-- Modal -->
+<div class="modal fade" id="login" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginTitle">LOGIN</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Form -->
+                <form action="/login" method="post">
+                    <div class="mb-3">
+                        <label for="ucode" class="form-label">UNIQUE CODE</label>
+                        <input type="text" class="form-control" id="ucode" name="ucode" placeholder="YOUR UNIQUE CODE" required>
+            <label for="pass" class="form-label">PASSWORD</label>
+            <input type="password" class="form-control" id="pass" name="pass" placeholder="ENTER YOUR PASSWORD" required>
+            <button type="submit" class="btn btn-secondary my-2" data-bs-dismiss="modal">Login</button>
+            {% csrf_token %}
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+{%endblock%}
