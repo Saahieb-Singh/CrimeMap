@@ -1,29 +1,69 @@
 {% extends 'Base.html' %}
+{% load static %}
+{% block title %}
+Report
+{% endblock %}
+{% block css %}
+<link rel='stylesheet' href='{% static '/login.css' %}'>
+{% endblock %}
+{% block nav %}
+<li><a href="/logout">LOGOUT</a></li>
+{% endblock %}
 
-{% block body %}
-<form action='/submit' method='post'>
-<div class="mb-3">
-    <label for="reportid" class="form-label">REPORT_ID</label>
-    <input type="number" class="form-control" id="reportid" name="reportid" placeholder="ENTER REPORT_ID">
+  {% block body %}
+  {{ html|safe }}
+  <div class="container">
+      <div class="case-form" >
+          <form id="register" action='submit' method='post'>
+              <div class="div-form">
+            <label for="fir_id" >Fir_ID</label>
+            <input type="number" id="fir_id" name="fir_id" placeholder="ENTER FIR ID">
+        </div>
+        
+           <div class="div-form">
+               <label for="pol_st_ID">Police_Station_ID</label>
+               <input type="number" id="pol_st_ID" name="pol_st_ID" placeholder="ENTER POLICE STATION ID">
+           </div>
+           
+           <div class="div-form">
+               <label for="loc">Location</label>
+               <input type="text" id="loc" name="loc" placeholder="ENTER LOCATION">
+           </div>
+           
+           <div class="div-form">
+               <label for="date_tym">Date And Time</label>
+               <input type="datetime-local" id="date_tym" name="date_tym">
+            </div>
+            <div class="div-form">
+                <label for="case_detail">Case Detail</label>
+                <textarea type="text" id="case_detail" name="case_detail" row=4 column=10></textarea>
+            </div>
+            <div class="div-form">
+                <label for="dhara">Dhara</label>
+                <select name="dhara" id="dhara">
+                    <option value="Internet Fraud">Internet Fraud</option>
+                    <option value="Dacoity">Dacoity</option>
+                    <option value="Racketeering">Racketeering</option>
+                    <option value="Organised Crime">Organised Crime</option>
+                    <option value="Human Trafficking">Human Trafficking</option>
+                    <option value="Money Laundering">Money Laundering</option>
+                    <option value="Robbery">Robbery</option>
+                    <option value="Terrorism">Terrorism</option>
+                    <option value="Arms Trafficking">Arms Trafficking</option>
+                    <option value="Gambling">Gambling</option>
+                    <option value="Murder">Murder</option>
+                    <option value="Forgery">Forgery</option>
+                    <option value="Illegal Drug Trade">Illegal Drug Trade</option>
+                    <option value="Poaching and wildlife Trafficking">Poaching and wildlife Trafficking</option>
+                    <option value="Cybercrime">Cybercrime</option>
+                </select>
+            </div>
+            {% csrf_token %}
+            <div class="button">
+                <input type="submit" class="btn submit">
+            </div>
+        </form>
+    </div>
 </div>
-<div class="mb-3">
-    <label for="casetype" class="form-label">CASE_TYPE</label>
-    <input type="text" class="form-control" id="casetype" name="casetype" placeholder="ENTER CASE_TYPE">
-</div>
-<div class="mb-3">
-    <label for="loc" class="form-label">LOCATION</label>
-    <input type="text" class="form-control" id="loc" name ="loc" placeholder="ENTER LOCATION">
-</div>
-<div class="mb-3">
-    <label for="pin" class="form-label">PIN_CODE</label>
-    <input type="number" class="form-control" id="pin" name="pin" placeholder="ENTER PIN_CODE">
-</div>
-<div class="mb-3">
-    <label for="details" class="form-label">DETAILS</label>
-    <textarea class="form-control" id="details" name="details" rows="3"></textarea>
-</div>
-<input class="btn btn-success" type="submit" value="Submit">
-{% csrf_token %}
-</form>
-
+    
 {% endblock %}

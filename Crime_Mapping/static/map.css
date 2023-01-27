@@ -1,0 +1,104 @@
+.container1{
+    margin: 10px 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.marker{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px 11px
+}
+
+#red{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:red;
+}
+#blue{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:blue;
+}
+#green{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:green;
+}
+#purple{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:purple;
+}
+#orange{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:orange;
+}
+#darkred{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:darkred;
+}
+#lightred{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:#FFCCCB;
+}
+#lightgray{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:lightgray;
+}
+#darkblue{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:darkblue;
+}
+#darkgreen{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:darkgreen;
+}
+#gray{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:gray;
+}
+#white{
+    width:18px;
+    height: 18px;
+    border: 2px;
+    border-radius: 10px;
+    background:white;
+}
+#black{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:black;
+}
+#pink{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:pink;
+}
+#lightblue{
+    width:18px;
+    height: 18px;
+    border-radius: 10px;
+    background:lightblue;
+}

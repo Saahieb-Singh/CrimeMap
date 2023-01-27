@@ -1,5 +1,79 @@
 {% extends 'Base.html' %}
-
+{% load static %}
+{% block title %}
+Map
+{% endblock %}
+{% block css %}
+<link rel='stylesheet' href='{% static '/map.css' %}'>
+{% endblock %}
 {% block body %}
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {{ m|safe}}
+        </div>
+    </div>
+</div>
+<div class="container1">
+    <div class="marker">
+        <div id='red'></div>
+        <div>Internet Fraud</div>
+    </div>
+    <div class="marker">
+        <div id='blue'></div>
+        <div>Dacoity</div>
+    </div>
+    <div class="marker">
+        <div id='green'></div>
+        <div>Racketeering</div>
+    </div>
+    <div class="marker">
+        <div id='purple'></div>
+        <div>Organised Crime</div>
+    </div>
+    <div class="marker">
+        <div id='orange'></div>
+        <div>Human Trafficking</div>
+    </div>
+    <div class="marker">
+        <div id='darkred'></div>
+        <div>Money Laundering</div>
+    </div>
+    <div class="marker">
+        <div id='lightred'></div>
+        <div>Robbery</div>
+    </div>
+    <div class="marker">
+        <div id='lightgray'></div>
+        <div>Terrorism</div>
+    </div>
+    <div class="marker">
+        <div id='darkblue'></div>
+        <div>Arms Trafficking</div>
+    </div>
+    <div class="marker">
+        <div id='darkgreen'></div>
+        <div>Gambling</div>
+    </div>
+    <div class="marker">
+        <div id='gray'></div>
+        <div>Forgery</div>
+    </div>
+    <div class="marker">
+        <div id='white'></div>
+        <div>Illegal Drug Trade</div>
+    </div>
+    <div class="marker">
+        <div id='black'></div>
+        <div>Murder</div>
+    </div>
+    <div class="marker">
+        <div id='pink'></div>
+        <div>Poaching and wildlife Trafficking</div>
+    </div>
+    <div class="marker">
+        <div id='lightblue'></div>
+        <div>Cybercrime</div>
+    </div>
+</div>
 {% endblock %}

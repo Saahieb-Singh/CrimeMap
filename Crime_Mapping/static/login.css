@@ -1,0 +1,44 @@
+.submit{
+    background-color: #05135D;
+    border-color: #05135D;
+    margin: auto;
+    color: #fff;
+}
+
+.case-form{
+    width: 60%;
+    height: 84vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 30px;
+}
+
+#register{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.div-form{
+    display: flex;
+    flex-direction: column;
+    margin: 7px 4px;
+    width:100%;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+input,select,textarea{
+    border-radius: 6px;
+}
+.container{
+    /* background-image: ; */
+}
